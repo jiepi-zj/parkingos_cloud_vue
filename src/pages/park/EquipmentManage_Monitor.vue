@@ -186,7 +186,7 @@
                 console.log(user.authlist.length)
                 for (var item of user.authlist) {
                     if (AUTH_ID.showEquipmentManage_Monitor_auth_id == item.auth_id) {
-                        // console.log(item.sub_auth)
+                        console.log(item.sub_auth)
                         this.hideSearch= !common.showSubSearch(item.sub_auth)
                         this.hideAdd= !common.showSubAdd(item.sub_auth)
                         this.showEdit= common.showSubEdit(item.sub_auth)
@@ -218,7 +218,7 @@
         watch: {
             channelType: function (val) {
                 this.tableitems[2].subs[0].selectlist = val;
-                console.log(val);
+                //console.log(val);
             }
         },
         methods: {
