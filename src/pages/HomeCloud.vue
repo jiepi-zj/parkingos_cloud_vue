@@ -69,11 +69,29 @@
                          :default-active="highlightindex">
 
                     <el-row v-show="park">
+                        <el-submenu v-if="this.showParkItem.monthCarManage" index="/monthCarManage">
+                            <template slot="title"><span class="menuitem">月租会员</span></template>
+                            <el-menu-item index="/monthCarManage_Info"v-if="this.showParkItem.monthCarManage_Info">月租车信息管理
+                            </el-menu-item>
+                            <el-menu-item index="/monthCarManage_Fee"v-if="this.showParkItem.monthCarManage_Fee">月租车费率管理
+                            </el-menu-item>
+                        </el-submenu>
+                        <el-submenu v-if="this.showParkItem.parkingManage" index="/parkingManage">
+                            <template slot="title"><span class="menuitem">车场管理</span></template>
+                            <el-menu-item index="/parkingManage_info"v-if="this.showParkItem.parkingManage_info">车场信息管理
+                            </el-menu-item>
+                        </el-submenu>
                         <el-submenu v-if="this.showParkItem.orderManage" index="/orderManage">
                             <template slot="title"><span class="menuitem">订单管理</span></template>
                             <el-menu-item index="/orderManage_Orders" v-if="this.showParkItem.orderManage_Orders">订单记录
                             </el-menu-item>
                             <el-menu-item index="/orderManage_Poles" v-if="this.showParkItem.orderManage_Poles">抬杆记录
+                            </el-menu-item>
+                            <el-menu-item index="/orderManage_Park" v-if="this.showParkItem.orderManage_Park">停车订单
+                            </el-menu-item>
+                            <el-menu-item index="/orderManage_CenterFee" v-if="this.showParkItem.orderManage_CenterFee">中央收费订单管理
+                            </el-menu-item>
+                            <el-menu-item index="/orderManage_MonthCar" v-if="this.showParkItem.orderManage_MonthCar">月租车延期订单管理
                             </el-menu-item>
                         </el-submenu>
                         <el-submenu v-if="this.showParkItem.monthMember" index="/monthMember">
@@ -98,7 +116,13 @@
                                           v-if="this.showParkItem.orderStatistics_DailyReport">日报统计
                             </el-menu-item>
                             <el-menu-item index="/orderStatistics_MonthReport"
-                                          v-if="this.showParkItem.orderStatistics_MonthReport">月报统计
+                                          v-if="this.showParkItem.orderStatistics_DailyReport">月报统计
+                            </el-menu-item>
+                            <el-menu-item index="/orderStatistics_ParkingFeeStat"
+                                          v-if="this.showParkItem.orderStatistics_ParkingFeeStat">临时停车统计
+                            </el-menu-item>
+                            <el-menu-item index="/orderStatistics_MonthCarDenyStat"
+                                          v-if="this.showParkItem.orderStatistics_MonthCarDenyStat">月租车延期统计
                             </el-menu-item>
                         </el-submenu>
                         <el-submenu v-if="this.showParkItem.shopManage" index="/shopManage">
@@ -150,6 +174,10 @@
                         </el-submenu>
                         <el-submenu index="/systemManage" v-if="this.showParkItem.systemManage">
                             <template slot="title"><span class="menuitem">系统管理</span></template>
+                            <el-menu-item index="/systemManage_PaymentAccount"
+                                          v-if="this.showParkItem.systemManage_PaymentAccount">
+                                收款账号管理
+                            </el-menu-item>
                             <el-menu-item index="/systemManage_BlackList"
                                           v-if="this.showParkItem.systemManage_BlackList">
                                 黑名单管理

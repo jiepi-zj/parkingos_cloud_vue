@@ -1,5 +1,8 @@
 export const AUTH_ID = {
     orderManage: 2,                 //订单管理
+    orderManage_Park:315,            //停车订单
+    orderManage_MonthCar:316,        //月租车延期订单管理
+    orderManage_CenterFee:314,       //中央收费订单管理
     orderManage_Orders: 83,         //订单记录
     orderManage_Poles: 84,          //抬杆记录
     monthMember: 7,                 //月卡会员-大菜单
@@ -8,6 +11,8 @@ export const AUTH_ID = {
     orderStatistics: 11,            //统计分析
     orderStatistics_DailyReport: 12,   //统计分析-时租订单统计-日报
     orderStatistics_MonthReport: 318,   //统计分析-时租订单统计-日报
+    orderStatistics_ParkingFeeStat: 323,//统计分析-临时停车收费统计
+    orderStatistics_MonthCarDenyStat: 324,//统计分析-月卡车延期收费统计
     shopManage: 71,                 //商户管理-大菜单
     shopManage_Coupon: 305,         //优惠券管理
     shopManage_Shop: 299,           //商户管理-小菜单
@@ -23,6 +28,7 @@ export const AUTH_ID = {
     employeePermission_Role: 22,    //角色管理
     employeePermission_Manage: 23,  //员工管理
     systemManage: 24,               //系统管理
+    systemManage_PaymentAccount:322,//收款账号管理
     systemManage_BlackList: 303,    //黑名单管理
     systemManage_Commute: 304,      //上下班记录
     systemManage_Account: 25,       //账户管理
@@ -38,9 +44,17 @@ export const AUTH_ID = {
     onlinePay_Income: 10,           //电子收款
     onlinePay_CashManage: 9,        //提现管理
     centerMonitor: 309,              //中央监控
+    parkingManage:319,                //车场管理
+    parkingManage_info:320,          //车场信息管理
+    monthCarManage:317,             //月租会员-大菜单
+    monthCarManage_Info:318,        //月租车信息管理
+    monthCarManage_Fee:321,         //月租车费率管理
 };
 export const showParkItem_const = {
     orderManage: false,
+    orderManage_Park:false,
+    orderManage_MonthCar:false,
+    orderManage_CenterFee:false,
     orderManage_Orders: false,
     orderManage_Poles: false,
     monthMember: false,
@@ -49,6 +63,8 @@ export const showParkItem_const = {
     orderStatistics: false,
     orderStatistics_DailyReport: false,
     orderStatistics_MonthReport: false,
+    orderStatistics_ParkingFeeStat: false,
+    orderStatistics_MonthCarDenyStat: false,
     onlinePay: false,
     onlinePay_Income: false,
     onlinePay_CashManage: false,
@@ -67,6 +83,7 @@ export const showParkItem_const = {
     employeePermission_Role: false,
     employeePermission_Manage: false,
     systemManage: false,
+    systemManage_PaymentAccount: false,
     systemManage_BlackList: false,
     systemManage_Commute: false,
     systemManage_Account: false,
@@ -79,6 +96,11 @@ export const showParkItem_const = {
     systemManage_MonthCard: false,
     systemManage_Logs: false,
     centerMonitor: false,
+    parkingManage:false,
+    parkingManage_info:false,
+    monthCarManage:false,
+    monthCarManage_Info:false,
+    monthCarManage_Fee:false,
 };
 export const AUTH_ID_UNION = {
     businessOrder: 105,                             //业务订单

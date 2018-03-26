@@ -5,9 +5,13 @@ import NotFound from './pages/404.vue'
 import HomeCloud from './pages/HomeCloud.vue'
 
 //云平台页面-车场
+import ParkingManage_Info from './pages/park/ParkingManage_Info.vue'
 import index from './pages/park/index.vue'
 import OrderManage_Orders from './pages/park/OrderManage_Orders.vue'
 import OrderManage_Poles from './pages/park/OrderManage_Poles.vue'
+import OrderManage_Park from './pages/park/OrderManage_Park.vue'
+import OrderManage_CenterFee from './pages/park/OrderManage_CenterFee.vue'
+import OrderManage_MonthCar from './pages/park/OrderManage_MonthCar.vue'
 import MonthMember_Refill from './pages/park/MonthMember_Refill.vue'
 import MonthMember_VIP from './pages/park/MonthMember_VIP.vue'
 import OnlinePay_CashManage from './pages/park/OnlinePay_CashManage.vue'
@@ -26,6 +30,7 @@ import EquipmentManage_Camera from './pages/park/EquipmentManage_Camera.vue'
 import EquipmentManage_LED from './pages/park/EquipmentManage_LED.vue'
 import EmployeePermission_Manage from './pages/park/EmployeePermission_EmployeeManage.vue'
 import EmployeePermission_Role from './pages/park/EmployeePermission_RoleManage.vue'
+import SystemManage_PaymentAccount from './pages/park/SystemManage_PaymentAccount.vue'
 import SystemManage_BlackList from './pages/park/SystemManage_BlackList.vue'
 import SystemManage_Commute from './pages/park/SystemManage_Commute.vue'
 import SystemManage_Account from './pages/park/SystemManage_Account.vue'
@@ -36,6 +41,10 @@ import SystemManage_CarManage_BindType from './pages/park/SystemManage_CarManage
 import SystemManage_Price from './pages/park/SystemManage_Price.vue'
 import SystemManage_MonthCard from './pages/park/SystemManage_MonthCard.vue'
 import SystemManage_Logs from './pages/park/SystemManage_Logs.vue'
+import MonthCarManage_Info from './pages/park/MonthCarManage_Info.vue'
+import MonthCarManage_Fee from './pages/park/MonthCarManage_Fee.vue'
+import OrderStatistics_ParkingFeeStat from './pages/park/OrderStatistics_ParkingFeeStat.vue'
+import OrderStatistics_MonthCarDenyStat from './pages/park/OrderStatistics_MonthCarDenyStat.vue'
 
 //云平台页面-集团
 import BusinessOrder_Cars from './pages/union/BusinessOrder_Cars.vue'
@@ -61,11 +70,39 @@ let routes = [
     {
         path: '/',
         component: HomeCloud,
-        // name: '订单管理',
+        name: '订单管理',
         iconCls: 'el-icon-document',
         children: [
             {path: '/orderManage_Orders', component: OrderManage_Orders, name: '订单记录'},
             {path: '/orderManage_Poles', component: OrderManage_Poles, name: '抬杆记录'},
+            {path: '/orderManage_Park', component: OrderManage_Park, name: '停车订单'},
+            {path: '/orderManage_CenterFee', component: OrderManage_CenterFee, name: '中央收费订单管理'},
+            {path: '/orderManage_MonthCar', component: OrderManage_MonthCar, name: '月租车延期订单管理'},
+        ]
+    },{
+        path:'/',
+        name:'月租会员',
+        component:HomeCloud,
+        iconCls:'el-icon-document',
+        children:[
+            {path:'/monthCarManage_Info',component: MonthCarManage_Info, name:'月租车信息管理'},
+            {path:'/monthCarManage_Fee',component: MonthCarManage_Fee, name:'月租车费率管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场参数管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场收费规则管理'}
+        ]
+    },{
+        path:'/',
+        name:'车场管理',
+        component:HomeCloud,
+        iconCls:'el-icon-document',
+        children:[
+            {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场信息管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'工作站管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场区域管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场车道管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场设备管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场参数管理'},
+            // {path:'/parkingManage_Info',component: ParkingManage_Info, name:'车场收费规则管理'}
         ]
     },
     {
@@ -97,7 +134,8 @@ let routes = [
             {path: '/orderStatistics_DailyReport', component: OrderStatistics_DailyReport, name: '时租订单统计'},
             {path: '/orderStatistics_Settlement', component: OrderStatistics_Settlement, name: '日报'},
             {path: '/orderStatistics_MonthReport', component: OrderStatistics_MonthReport, name: '月报'},
-            // {path: '/orderStatistics_DailyReport', component: OrderStatistics_Commute, name: '订单'},
+            {path: '/orderStatistics_ParkingFeeStat', component: OrderStatistics_ParkingFeeStat, name: '临时停车统计'},
+            {path: '/orderStatistics_MonthCarDenyStat', component: OrderStatistics_MonthCarDenyStat, name: '月租车延期统计'},
         ]
     },
     {
@@ -141,6 +179,7 @@ let routes = [
         name: '系统管理',
         iconCls: 'el-icon-document',
         children: [
+            {path: '/systemManage_PaymentAccount', component: SystemManage_PaymentAccount, name: '黑名单管理'},
             {path: '/systemManage_BlackList', component: SystemManage_BlackList, name: '黑名单管理'},
             {path: '/systemManage_Commute', component: SystemManage_Commute, name: '上下班记录'},
             {path: '/systemManage_Account', component: SystemManage_Account, name: '账户管理'},
@@ -163,7 +202,7 @@ let routes = [
     {
         path: '/',
         component: HomeCloud,
-        // name: '业务订单',
+        name: '业务订单',
         iconCls: 'el-icon-document',
         children: [
             {path: '/businessOrder_Orders', component: BusinessOrder_Orders, name: '订单记录'},
@@ -175,31 +214,31 @@ let routes = [
     {
         path: '/',
         component: HomeCloud,
-        // name: '会员',
+        name: '会员',
         iconCls: 'el-icon-document',
         children: [
             {path: '/member_MonthVIP', component: Member_MonthVIP, name: '月卡会员'},
             {path: '/member_BlackList', component: Member_BlackList, name: '黑名单管理'},
         ]
     },
-    // {
-    //     path: '/',
-    //     component: HomeCloud,
-    //     // name: '系统设置',
-    //     iconCls: 'el-icon-document',
-    //     children: [
-    //         {path: '/systemSetting_Account', component: SystemSetting_Account, name: '账户信息'},
-    //     ]
-    // },
-    // {
-    //     path: '/',
-    //     component: HomeCloud,
-    //     // name: '系统设置',
-    //     iconCls: 'el-icon-document',
-    //     children: [
-    //         {path: '/systemSetting_Park.vue', component: SystemSetting_Park.vue, name: '停车场'},
-    //     ]
-    // },
+    {
+        path: '/',
+        component: HomeCloud,
+        name: '账户信息',
+        iconCls: 'el-icon-document',
+        children: [
+            {path: '/systemManage_Account', component: SystemManage_Account, name: '账户信息'},
+        ]
+    },
+    {
+        path: '/',
+        component: HomeCloud,
+        name: '上下班记录',
+        iconCls: 'el-icon-document',
+        children: [
+            //{path: '/systemSetting_Park', component: SystemSetting_Park, name: '上下班记录'},
+        ]
+    },
 
     /*
     * 404保留页面

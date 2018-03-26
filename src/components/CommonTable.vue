@@ -578,7 +578,6 @@
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                     }
                 }).then(function (response) {
-                    // console.log(ret)
                     let ret = response.data;
                     if (ret.validate != 'undefined' && ret.validate == '0') {
                         vm.loading = false;
@@ -733,8 +732,8 @@
             onSearch: function (sform) {
                 //在这里得到表单项,提交查询
                 this.sform = sform
-                console.log(sform)
-                console.log(this.sform)
+//                console.log(sform)
+//                console.log(this.sform)
                 this.getTableData(sform)
             },
             //表格编辑
@@ -807,7 +806,7 @@
                         params += x + '=' + this.sform[x] + '&'
                     }
                 }
-                console.log(params)
+                //console.log(params)
                 if (params.indexOf('comid') > -1) {
                     window.open(path + api + '?' + params);
                 } else {
@@ -1328,7 +1327,7 @@
 
             },
             changeanalysisdatecollect(val) {
-                console.log(val);
+                //console.log(val);
                 this.currentcollect = val;
                 if (this.currentdate == '') {
                     this.currentdate = this.currentFormatDate()
@@ -1339,7 +1338,7 @@
             },
             changeanalysisdate(input2) {
                 //修改车场统计分析日期
-                console.log(input2);
+                //console.log(input2);
                 if (input2.length > 0) {
                     let input = input2[0] + '至' + input2[1];
                     this.currentdate = input;
@@ -1372,7 +1371,7 @@
             //window.onresize=()=>{alert('123');this.mapheight=common.gwh()*0.5}
             this.mapheight = common.gwh() * 0.5
             this.mapstyle = 'width:inherit;height:' + 420 + 'px'
-            console.log('commontable mount')
+            //console.log('commontable mount')
             //拷贝查询表单,用来在重置时清空表单内容
             this.tempSearchForm = common.clone(this.searchForm)
 

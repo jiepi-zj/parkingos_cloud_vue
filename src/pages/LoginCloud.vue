@@ -339,7 +339,7 @@
                                 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                             }
                         }).then(function (response) {
-                            console.log(response)
+                            //console.log(JSON.stringify(response))
                             let ret = response.data;
                             if (ret.state) {
                                 var u = ret.user;
@@ -424,7 +424,7 @@
                                     sessionStorage.setItem('showParkItem',JSON.stringify(_this.showParkItem))
                                     console.log(_this.showParkItem)
                                     if(_this.highlightindex==''){
-                                        _this.$router.push({path: '/index'});
+                                        _this.$router.push({path: '/xindex'});
                                     }else{
                                         _this.$router.push({path: _this.highlightindex});
                                         sessionStorage.setItem('highlightindex', _this.highlightindex)

@@ -270,6 +270,13 @@ export default {
             + '&loginuin=' + sessionStorage.getItem('loginuin')
         return axios.get(path + '/getdata/getpname' + param)
     },
+    getCardType() {
+        //获得车型类型
+        let param = '?token=' + sessionStorage.getItem('token')
+            + '&comid=' + sessionStorage.getItem('comid')
+        return axios.get(path + '/getdata/getCardType' + param)
+    },
+
     getCarType() {
         //获得车型类型
         let param = '?token=' + sessionStorage.getItem('token')
@@ -285,6 +292,16 @@ export default {
             + '&carnumber=' + encodeURI(encodeURI(carnumber))
         return axios.get(path + '/vip/editCarNum' + param)
     },
+    getRenewFeeSum(cardtype, months, endtime) {
+        //通过续费月数time和车辆类型cardtype获取金额total
+        let param = '?token=' + sessionStorage.getItem('token')
+            + '&comid=' + sessionStorage.getItem('comid')
+            + '&loginuin=' + sessionStorage.getItem('loginuin')
+            + '&card_Type=' + cardtype
+            + '&months=' + months
+            + '&endtime=' + endtime
+        return axios.get(path + '/getdata/getrenewfeesum' + param)
+    },
     getProdSum(p_name, month) {
         //通过续费月数和月卡套餐获取金额
         let param = '?token=' + sessionStorage.getItem('token')
@@ -293,6 +310,36 @@ export default {
             + '&p_name=' + p_name
             + '&months=' + month
         return axios.get(path + '/getdata/getprodsum' + param)
+    },
+    insertEndTime(endTime,id){
+        //续费成功后将最新的会员有效结束时间更新到月租车信息管理表中
+        let param = '?token=' + sessionStorage.getItem('token')
+            + '&comid=' + sessionStorage.getItem('comid')
+            + '&loginuin=' + sessionStorage.getItem('loginuin')
+            + '&endTime=' + endTime
+            + '&id=' + id
+        return axios.get(path + '/getdata/insertEndTime' + param)
+    },
+    reNewDeny(   vehicle_no, card_no, cardtype, username, endtime, operate, receivable_amount, total, reduce_amount, remark, pay_type) {
+        // reNewProduct(this.pnameno,this.refillcount,this.currentRow.name,this.Btime,this.currentRow.pid,this.currentRow.remark,this.RefillTotalact,roleid==30?'车场':roleid){
+        //月卡续费
+        let param = '?token=' + sessionStorage.getItem('token')
+            + '&comid=' + sessionStorage.getItem('comid')
+            + '&loginuin=' + sessionStorage.getItem('loginuin')
+            + '&vehicle_no=' + vehicle_no
+            + '&card_no=' + card_no
+            + '&cardtype=' + cardtype
+            + '&username=' + username
+            + '&endtime=' + endtime
+            + '&operate=' + operate
+            + '&receivable_amount=' + receivable_amount
+            + '&total=' + total
+            + '&reduce_amount=' + reduce_amount
+            + '&remark=' + remark
+            + '&pay_type=' + pay_type
+        return axios.get(path + '/OrderManageMonthCar/add' + param,{headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        }})
     },
     reNewProduct(p_name, month, name, b_time, id, remark, act_total, nickname) {
         // reNewProduct(this.pnameno,this.refillcount,this.currentRow.name,this.Btime,this.currentRow.pid,this.currentRow.remark,this.RefillTotalact,roleid==30?'车场':roleid){

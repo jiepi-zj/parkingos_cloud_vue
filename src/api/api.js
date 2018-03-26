@@ -11,6 +11,72 @@ export const phonewidth = '150'
 export const percision = 5
 
 
+export const carState = [
+    {'value_name': '正常','value_no': '0',},
+    {'value_name': '已挂失','value_no': '1',},
+    {'value_name': '已退租','value_no': '2'}
+]
+
+export const checkState = [
+    {'value_name': '待审核','value_no': '0',},
+    {'value_name': '已审核','value_no': '1',},
+    {'value_name': '审核未通过','value_no': '2'}
+]
+
+export const accountStyle = [
+    {'value_name': '微信公众号支付','value_no': '0',},
+    {'value_name': '微信APP支付','value_no': '1',},
+    {'value_name': '支付宝账号','value_no': '2'}
+]
+
+export const feeState = [
+    {'value_name': '未启用', 'value_no': '0'},
+    {'value_name': '启用', 'value_no': '1'}
+]
+
+export const orderStates = [
+    {'value_name': '未支付', 'value_no': '0'},
+    {'value_name': '已支付', 'value_no': '1'}
+]
+
+export const pay_type = [
+    {'value_name': '现金支付','value_no': '0',},
+    {'value_name': '微信支付','value_no': '1',},
+    {'value_name': '支付宝支付','value_no': '2'},
+    {'value_name': '银联支付','value_no': '3'},
+    {'value_name': '其他支付','value_no': '4'}
+]
+
+export const orderState = [
+    {'value_name': '正常', 'value_no': '0'},
+    {'value_name': '已删除', 'value_no': '1'},
+    {'value_name': '待审核', 'value_no': '2'}
+]
+
+export const useTypes = [
+    {'value_name': '车牌识别','value_no': '0',},
+    {'value_name': '刷卡','value_no': '1',},
+    {'value_name': '手持POS机','value_no': '2'},
+    {'value_name': '车牌识别+手持POS机','value_no': '20'}
+]
+
+export const parkTypes = [
+    {'value_name': '地面', 'value_no': '0'},
+    {'value_name': '地下', 'value_no': '1'},
+    {'value_name': '地上/地下', 'value_no': '2'},
+    {'value_name': '路边', 'value_no': '9'}
+]
+
+export const isSupport = [
+    {'value_name': '不支持', 'value_no': '0'},
+    {'value_name': '支持', 'value_no': '1'}
+]
+
+export const showOnMap = [
+    {'value_name': '不显示', 'value_no': '0'},
+    {'value_name': '显示', 'value_no': '1'}
+]
+
 export const operateType = [
     {'value_no': 0, 'value_name': '全部'},
     {'value_no': 1, 'value_name': '续费'},
@@ -31,88 +97,6 @@ export const statType = [
     {'value_no': 0, 'value_name': '未使用'},
     {'value_no': 1, 'value_name': '已使用'},
     {'value_no': 2, 'value_name': '回收作废'}
-]
-export const moveStyle = [
-    {'value_no': 0, 'value_name': '自适应'},
-    {'value_no': 1, 'value_name': '从右向左移动'},
-    {'value_no': 2, 'value_name': '从左向右移动'},
-    {'value_no': 3, 'value_name': '从下向上移动'},
-    {'value_no': 4, 'value_name': '从上向下移动'},
-    {'value_no': 5, 'value_name': '从右向左展开'},
-    {'value_no': 6, 'value_name': '从左向右展开'},
-    {'value_no': 7, 'value_name': '从下向上展开'},
-    {'value_no': 8, 'value_name': '从上向下展开'},
-    {'value_no': 9, 'value_name': '立即显示'},
-    {'value_no': 10, 'value_name': '从中间向两边展开'},
-    {'value_no': 11, 'value_name': '从两边向中间展开'},
-    {'value_no': 12, 'value_name': '从中间向上下展开'},
-    {'value_no': 13, 'value_name': '从上下向中间展开'},
-    {'value_no': 14, 'value_name': '闪烁'},
-    {'value_no': 15, 'value_name': '右百叶'}
-    ,
-]
-
-export const moveSpeed = [
-    {'value_no': 0, 'value_name': '0'},
-    {'value_no': 1, 'value_name': '1'},
-    {'value_no': 2, 'value_name': '2'},
-    {'value_no': 3, 'value_name': '3'},
-    {'value_no': 4, 'value_name': '4'},
-    {'value_no': 5, 'value_name': '5'},
-    {'value_no': 6, 'value_name': '6'},
-    {'value_no': 7, 'value_name': '7'},
-    {'value_no': 8, 'value_name': '8'}
-]
-
-export const waitingTime = [
-    {'value_no': 0, 'value_name': '0s'},
-    {'value_no': 1, 'value_name': '1s'},
-    {'value_no': 2, 'value_name': '2s'},
-    {'value_no': 3, 'value_name': '3s'},
-    {'value_no': 4, 'value_name': '4s'},
-    {'value_no': 5, 'value_name': '5s'}
-]
-
-export const LEDStyle = [
-    {'value_no': 0, 'value_name': '普通屏'},
-    {'value_no': 1, 'value_name': '余位屏'}
-]
-
-export const redirectPort = [
-    {'value_no': 0, 'value_name': 'rs232-1'},
-    {'value_no': 1, 'value_name': 'rs232-2'},
-    {'value_no': 2, 'value_name': 'rs485'}
-]
-
-export const LEDColor = [
-    {'value_no': 0, 'value_name': '单基色'},
-    {'value_no': 1, 'value_name': '双基色'}
-]
-
-export const fontSize = [
-    {'value_no': 0, 'value_name': '12×12'},
-    {'value_no': 1, 'value_name': '16×16'},
-    {'value_no': 2, 'value_name': '24×24'},
-    {'value_no': 3, 'value_name': '32×32'},
-    {'value_no': 4, 'value_name': '48×48'},
-    {'value_no': 5, 'value_name': '64×64'},
-    {'value_no': 6, 'value_name': '80×80'},
-    {'value_no': 7, 'value_name': '96×96'}
-]
-
-export const fontStyle = [
-    {'value_no': 0, 'value_name': '宋体'},
-    {'value_no': 1, 'value_name': '楷体'},
-    {'value_no': 2, 'value_name': '黑体'},
-    {'value_no': 3, 'value_name': '隶书'},
-    {'value_no': 4, 'value_name': '行书'}
-]
-
-export const color = [
-    {'value_no': 0, 'value_name': '红'},
-    {'value_no': 1, 'value_name': '绿'},
-    {'value_no': 2, 'value_name': '黄'}
-
 ]
 
 export const channlManager = [
